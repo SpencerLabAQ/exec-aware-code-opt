@@ -23,27 +23,6 @@ def label_line_cov(count):
         return ""
 
 def quantize_exec_count(count):
-    '''
-    Quantization of line execution counts. The criteria we used considers the 
-    distribution of the value counts.
-
-    Stats: 
-    Total num of lines: 3833623
-    Min executions: 0 | Max executions: 1755
-    Q1 (without 0 and 1): 3.0
-    MEDIAN (without 0 and 1): 5.0
-    Q3 (without 0 and 1): 8.0
-    IQR (without 0 and 1): 5.0
-    Outlier threshold (Q3 + 2,5 * IQR): 20.5
-
-    Tokens:
-    -       : Range = (-1.0, 0.0],      No of lines: 1832267 (48%)  [Line not executed]
-    <e>     : Range = (0.0, 1.0],       No of lines: 1393089 (36%)  [Line executed exactly once]
-    <e+>    : Range = (1.0, 5.0],       No of lines: 351667 (9%)
-    <E>     : Range = (5.0, 20.5],      No of lines: 193992 (5%)
-    <E+>    : Range = (20.5, 1755.0],   No of lines: 62608 (2%)
-    '''
-
     assert count >= 0, "The count of line executions has to be a positive number"
     
     if count == 1: 

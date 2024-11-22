@@ -33,6 +33,11 @@ In addition, the original version of the PIE [4] dataset is required to build th
 bash dataset.sh
 ```
 
+### Variable states quantization
+Here, we outline the quantization strategy adopted for the variables states as indicated in the related paper.
+
+![Variable states quantization strategy](./pstates.png)
+
 ## Run Experiments - Model Training and Inference
 
 ```sh
